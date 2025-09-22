@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Apps from './pages/Apps';
 import Features from './pages/Features';
+import PWAInstallPrompt from './components/PWAInstallPrompt';
 
 /**
  * Protected Route component
@@ -51,6 +52,9 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="App">
+          {/* PWA Install Prompt - shows like SportPesa banner */}
+          <PWAInstallPrompt />
+          
           <Routes>
             {/* Login route - no layout */}
             <Route 

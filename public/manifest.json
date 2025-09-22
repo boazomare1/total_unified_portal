@@ -1,7 +1,7 @@
 {
-  "short_name": "Unified Portal",
-  "name": "Unified Client Portal - Centralized Business Applications",
-  "description": "A centralized client portal for managing all your business applications in one place",
+  "short_name": "TotalEnergies Portal",
+  "name": "TotalEnergies Client Portal - Centralized Business Applications",
+  "description": "A centralized client portal for managing all your TotalEnergies business applications in one place",
   "icons": [
     {
       "src": "logo192.png",
