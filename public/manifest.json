@@ -4,8 +4,8 @@
   "description": "A centralized client portal for managing all your business applications in one place",
   "icons": [
     {
-      "src": "logo.svg",
-      "type": "image/svg+xml",
+      "src": "logo.png",
+      "type": "image/png",
       "sizes": "any"
     },
     {
