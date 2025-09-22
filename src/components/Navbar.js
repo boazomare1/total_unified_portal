@@ -34,9 +34,11 @@ const Navbar = () => {
           {/* Brand logo and name */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-brand-red via-brand-orange to-brand-yellow rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">TE</span>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="TotalEnergies Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-gray-900">TotalEnergies</span>
                 <span className="text-xs text-gray-500 -mt-1">Client Portal</span>

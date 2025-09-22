@@ -50,9 +50,11 @@ const Login = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         {/* Logo */}
         <div className="flex justify-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-brand-red via-brand-orange to-brand-yellow rounded-xl flex items-center justify-center shadow-lg">
-            <span className="text-white font-bold text-2xl">TE</span>
-          </div>
+          <img 
+            src="/logo.png" 
+            alt="TotalEnergies Logo" 
+            className="w-16 h-16 object-contain"
+          />
         </div>
         
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
