@@ -10,11 +10,25 @@ const Apps = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const apps = [
+    // Fuel & Lubricants
     {
       id: 1,
-      title: 'Customer Relationship Management',
-      description: 'Manage your customer relationships, track interactions, and analyze sales performance with our comprehensive CRM solution.',
-      category: 'Business',
+      title: 'eStar Portal',
+      description: 'Fuels/reseller/customer portal with SAP integration, online payments, and user management capabilities.',
+      category: 'Fuel & Lubricants',
+      status: 'active',
+      color: 'primary',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+    },
+    {
+      id: 2,
+      title: 'eFuel',
+      description: 'Order & delivery placement system, expanding to bitumen/aviation with safety sheets and plant pickups.',
+      category: 'Fuel & Lubricants',
       status: 'active',
       color: 'info',
       icon: (
@@ -24,37 +38,64 @@ const Apps = () => {
       ),
     },
     {
-      id: 2,
-      title: 'Enterprise Resource Planning',
-      description: 'Streamline your business processes with integrated modules for finance, inventory, manufacturing, and human resources.',
-      category: 'Business',
+      id: 3,
+      title: 'myLub Portal',
+      description: 'Lubricants portal with split delivery, stock status, invoice history, and technical assistance.',
+      category: 'Fuel & Lubricants',
       status: 'active',
       color: 'primary',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
-      ),
-    },
-    {
-      id: 3,
-      title: 'Project Management',
-      description: 'Plan, track, and manage your projects with powerful tools for task management, team collaboration, and progress monitoring.',
-      category: 'Productivity',
-      status: 'active',
-      color: 'info',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
         </svg>
       ),
     },
     {
       id: 4,
-      title: 'Business Intelligence',
-      description: 'Transform your data into actionable insights with advanced analytics, reporting tools, and interactive dashboards.',
-      category: 'Analytics',
-      status: 'maintenance',
+      title: 'JamboFuels (JDFS)',
+      description: 'Fuel delivery system with loss management and truck scheduling capabilities.',
+      category: 'Fuel & Lubricants',
+      status: 'active',
+      color: 'info',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+        </svg>
+      ),
+    },
+    // Logistics & Tracking
+    {
+      id: 5,
+      title: 'Track & Trace',
+      description: 'Shipment scheduling and fleet management system with SAP integration.',
+      category: 'Logistics & Tracking',
+      status: 'active',
+      color: 'primary',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+        </svg>
+      ),
+    },
+    {
+      id: 6,
+      title: 'Follow My Order (FMO)',
+      description: 'Real-time delivery tracking with SMS and WhatsApp notifications.',
+      category: 'Logistics & Tracking',
+      status: 'active',
+      color: 'info',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5zM4.828 7l2.586 2.586a2 2 0 002.828 0L12 7H4.828zM4.828 17l2.586-2.586a2 2 0 012.828 0L12 17H4.828z" />
+        </svg>
+      ),
+    },
+    {
+      id: 7,
+      title: 'LPG Tracking System',
+      description: 'Cylinder tagging with stock & route dashboards and SAP integration.',
+      category: 'Logistics & Tracking',
+      status: 'active',
       color: 'primary',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,11 +103,92 @@ const Apps = () => {
         </svg>
       ),
     },
+    // Gas & Distribution
     {
-      id: 5,
-      title: 'Document Management',
-      description: 'Organize, store, and manage your documents with version control, collaboration features, and advanced search capabilities.',
-      category: 'Productivity',
+      id: 8,
+      title: 'EasyGas',
+      description: 'LPG cylinder ordering app with M-Pesa integration exploration.',
+      category: 'Gas & Distribution',
+      status: 'active',
+      color: 'info',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+    },
+    {
+      id: 9,
+      title: 'DigitalDMS',
+      description: 'LPG distribution management system for streamlined operations.',
+      category: 'Gas & Distribution',
+      status: 'active',
+      color: 'primary',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      ),
+    },
+    // Retail & Customer Engagement
+    {
+      id: 10,
+      title: 'Salsa Retail',
+      description: 'Microsoft Dynamics integration for station tracking within MS ecosystem.',
+      category: 'Retail & Customer Engagement',
+      status: 'active',
+      color: 'info',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+      ),
+    },
+    {
+      id: 11,
+      title: 'Booster Card App',
+      description: 'Prepaid fuel card ordering and approval system.',
+      category: 'Retail & Customer Engagement',
+      status: 'active',
+      color: 'primary',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+        </svg>
+      ),
+    },
+    {
+      id: 12,
+      title: 'Scratch & Win Promo',
+      description: 'Promotions and incentives platform for customer engagement.',
+      category: 'Retail & Customer Engagement',
+      status: 'active',
+      color: 'info',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+        </svg>
+      ),
+    },
+    // Infrastructure / Backoffice
+    {
+      id: 13,
+      title: 'PetroWeb',
+      description: 'Cloud stock management system with material balance capabilities.',
+      category: 'Infrastructure / Backoffice',
+      status: 'active',
+      color: 'primary',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+        </svg>
+      ),
+    },
+    {
+      id: 14,
+      title: 'DocOnline',
+      description: 'Customer document extranet for secure document sharing.',
+      category: 'Infrastructure / Backoffice',
       status: 'active',
       color: 'info',
       icon: (
@@ -76,21 +198,86 @@ const Apps = () => {
       ),
     },
     {
-      id: 6,
-      title: 'Communication Hub',
-      description: 'Centralized communication platform with messaging, video conferencing, and team collaboration tools.',
-      category: 'Communication',
-      status: 'inactive',
+      id: 15,
+      title: 'Safe to Load',
+      description: 'Truck validation safety tool for secure loading operations.',
+      category: 'Infrastructure / Backoffice',
+      status: 'active',
       color: 'primary',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+    },
+    {
+      id: 16,
+      title: 'Fusion Server',
+      description: 'Automation server with POS and dispenser integration capabilities.',
+      category: 'Infrastructure / Backoffice',
+      status: 'active',
+      color: 'info',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+        </svg>
+      ),
+    },
+    {
+      id: 17,
+      title: 'DOMS Forecourt Automation',
+      description: 'POS and forecourt equipment management system.',
+      category: 'Infrastructure / Backoffice',
+      status: 'active',
+      color: 'primary',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+    },
+    {
+      id: 18,
+      title: 'Oasis',
+      description: 'Shop digitalization platform with KRA integration.',
+      category: 'Infrastructure / Backoffice',
+      status: 'active',
+      color: 'info',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+    },
+    {
+      id: 19,
+      title: 'Tems+',
+      description: 'Card invoices digitalization system with KRA compliance.',
+      category: 'Infrastructure / Backoffice',
+      status: 'active',
+      color: 'primary',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      ),
+    },
+    {
+      id: 20,
+      title: 'eTIMS',
+      description: 'Electronic tax invoice management system for KRA compliance.',
+      category: 'Infrastructure / Backoffice',
+      status: 'active',
+      color: 'info',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
       ),
     },
   ];
 
-  const categories = ['all', 'Business', 'Productivity', 'Analytics', 'Communication'];
+  const categories = ['all', 'Fuel & Lubricants', 'Logistics & Tracking', 'Gas & Distribution', 'Retail & Customer Engagement', 'Infrastructure / Backoffice'];
 
   const filteredApps = apps.filter(app => {
     const matchesSearch = app.title.toLowerCase().includes(searchTerm.toLowerCase()) ||

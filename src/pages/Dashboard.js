@@ -11,8 +11,8 @@ const Dashboard = () => {
   const stats = [
     {
       name: 'Total Applications',
-      value: '12',
-      change: '+2',
+      value: '20',
+      change: '+3',
       changeType: 'positive',
       bgColor: 'bg-info-50',
       iconColor: 'text-info-600',
