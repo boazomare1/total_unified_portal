@@ -81,6 +81,8 @@ function App() {
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="apps" element={<Apps />} />
               <Route path="features" element={<Features />} />
+              <Route path="analytics" element={<Analytics />} />
+              <Route path="settings" element={<Settings />} />
             </Route>
           </Routes>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import Snackbar from '../components/Snackbar';
+import Toast from '../components/Toast';
 
 /**
  * Login page component
@@ -18,7 +18,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showOTP, setShowOTP] = useState(false);
   const [pendingUser, setPendingUser] = useState(null);
-  const [snackbar, setSnackbar] = useState({ show: false, message: '', type: 'error' });
+  const [toast, setToast] = useState({ show: false, message: '', type: 'error' });
   
   const { login, verifyOTP } = useAuth();
   const navigate = useNavigate();
@@ -36,6 +36,9 @@ const Login = () => {
     e.preventDefault();
     setIsLoading(true);
 
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 3000));
+
     // Simple hardcoded check for demo
     if (formData.email === 'admin@totalenergies.com' && formData.password === 'admin123') {
       setPendingUser({ id: '1', email: 'admin@totalenergies.com', name: 'John Doe (Admin)', role: 'admin' });
@@ -51,7 +54,12 @@ const Login = () => {
       return;
     }
 
-    alert('❌ Authentication Failed: Incorrect password');
+    // Show error with better UI
+    setToast({ 
+      show: true, 
+      message: '❌ Authentication Failed: Incorrect email or password', 
+      type: 'error' 
+    });
     setIsLoading(false);
   };
 
@@ -59,13 +67,20 @@ const Login = () => {
     e.preventDefault();
     setIsLoading(true);
 
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
     // Simple OTP check
     if (otp === '123456') {
       // Set user in localStorage and context
       localStorage.setItem('user', JSON.stringify(pendingUser));
       window.location.href = '/dashboard'; // Force page reload to update context
     } else {
-      alert('❌ Invalid OTP. Please try again.');
+      setToast({ 
+        show: true, 
+        message: '❌ Invalid OTP. Please try again.', 
+        type: 'error' 
+      });
     }
     
     setIsLoading(false);
@@ -75,18 +90,17 @@ const Login = () => {
     setShowOTP(false);
     setPendingUser(null);
     setOtp('');
-    setSnackbar({ show: false, message: '', type: 'error' }); // Clear snackbar
+    setToast({ show: false, message: '', type: 'error' }); // Clear toast
   };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      {/* Snackbar for notifications */}
-      <Snackbar
-        key={snackbar.show ? 'show' : 'hide'}
-        message={snackbar.message}
-        type={snackbar.type}
-        isVisible={snackbar.show}
-        onClose={() => setSnackbar({ show: false, message: '', type: 'error' })}
+      {/* Toast for notifications */}
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        isVisible={toast.show}
+        onClose={() => setToast({ show: false, message: '', type: 'error' })}
       />
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         {/* Logo */}
@@ -108,10 +122,11 @@ const Login = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6" onSubmit={(e) => {
-            console.log('Form onSubmit triggered!');
-            handleSubmit(e);
-          }}>
+          {!showOTP ? (
+            <form className="space-y-6" onSubmit={(e) => {
+              console.log('Form onSubmit triggered!');
+              handleSubmit(e);
+            }}>
             {/* Email field */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -215,9 +230,8 @@ const Login = () => {
               </button>
             </div>
           </form>
-
-          {/* OTP Verification Form */}
-          {showOTP && (
+          ) : (
+            /* OTP Verification Form */
             <div className="mt-6 border-t border-gray-200 pt-6">
               <form className="space-y-6" onSubmit={handleOTPSubmit}>
                 <div className="text-center">
@@ -270,7 +284,8 @@ const Login = () => {
             </div>
           )}
 
-          {/* Demo credentials */}
+          {/* Demo credentials - only show when not in OTP mode */}
+          {!showOTP && (
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
@@ -307,6 +322,7 @@ const Login = () => {
               </div>
             </div>
           </div>
+          )}
         </div>
       </div>
     </div>
