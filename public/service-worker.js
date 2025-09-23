@@ -1,12 +1,18 @@
-const CACHE_NAME = 'total-energies-portal-v1';
+const CACHE_NAME = 'total-energies-portal-v2';
 const urlsToCache = [
   '/',
-  '/static/js/bundle.js',
-  '/static/css/main.css',
+  '/dashboard',
+  '/apps',
+  '/analytics',
+  '/settings',
   '/manifest.json',
   '/logo.png',
   '/logo192.png',
-  '/logo512.png'
+  '/logo512.png',
+  '/screenshots/mobile-dashboard.png',
+  '/screenshots/mobile-apps.png',
+  '/screenshots/mobile-analytics.png',
+  '/screenshots/desktop-dashboard.png'
 ];
 
 self.addEventListener('install', (event) => {

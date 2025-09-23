@@ -1,7 +1,7 @@
 {
-  "short_name": "TotalEnergies Portal",
-  "name": "TotalEnergies Client Portal - Centralized Business Applications",
-  "description": "A centralized client portal for managing all your TotalEnergies business applications in one place",
+  "short_name": "TotalEnergies",
+  "name": "TotalEnergies Portal",
+  "description": "TotalEnergies Business Applications Portal",
   "icons": [
     {
       "src": "logo192.png",
@@ -19,31 +19,72 @@
       "src": "logo.png",
       "type": "image/png",
       "sizes": "any"
-    },
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
     }
   ],
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#ef4444",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "theme_color": "#1e40af",
   "background_color": "#ffffff",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en",
-  "categories": ["business", "productivity", "utilities"],
+  "categories": ["business", "productivity"],
   "prefer_related_applications": false,
-  "edge_side_panel": {
-    "preferred_width": 400
-  },
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View dashboard",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Apps",
+      "short_name": "Apps",
+      "description": "View applications",
+      "url": "/apps",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
   "screenshots": [
     {
-      "src": "logo512.png",
+      "src": "screenshots/mobile-dashboard.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "form_factor": "narrow"
+      "sizes": "390x844",
+      "form_factor": "narrow",
+      "label": "Dashboard Overview"
+    },
+    {
+      "src": "screenshots/mobile-apps.png",
+      "type": "image/png",
+      "sizes": "390x844",
+      "form_factor": "narrow",
+      "label": "Applications Portal"
+    },
+    {
+      "src": "screenshots/mobile-analytics.png",
+      "type": "image/png",
+      "sizes": "390x844",
+      "form_factor": "narrow",
+      "label": "Analytics Dashboard"
+    },
+    {
+      "src": "screenshots/desktop-dashboard.png",
+      "type": "image/png",
+      "sizes": "1280x720",
+      "form_factor": "wide",
+      "label": "Desktop Dashboard"
     }
   ]
 }

@@ -1,45 +1,18 @@
-t=2025-09-22T20:41:41+0300 lvl=info msg="no configuration paths supplied"
-t=2025-09-22T20:41:41+0300 lvl=info msg="using configuration at default config path" path=/home/boaz/.config/ngrok/ngrok.yml
-t=2025-09-22T20:41:41+0300 lvl=info msg="open config file" path=/home/boaz/.config/ngrok/ngrok.yml err=nil
-t=2025-09-22T20:41:41+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
-t=2025-09-22T20:41:43+0300 lvl=info msg="update available" obj=updater
-t=2025-09-22T20:41:43+0300 lvl=info msg="client session established" obj=tunnels.session
-t=2025-09-22T20:41:43+0300 lvl=info msg="tunnel session started" obj=tunnels.session
-t=2025-09-22T20:41:43+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:3000 url=https://e2e444d31dca.ngrok-free.app
-t=2025-09-22T20:43:24+0300 lvl=info msg="join connections" obj=join id=3025aa5e22ee l=127.0.0.1:3000 r=102.69.233.46:32924
-t=2025-09-22T20:43:31+0300 lvl=info msg="join connections" obj=join id=a33a4ef282af l=127.0.0.1:3000 r=102.69.233.46:57848
-t=2025-09-22T20:44:52+0300 lvl=info msg="join connections" obj=join id=6f8aef88955c l=127.0.0.1:3000 r=102.69.233.46:43400
-t=2025-09-22T20:45:17+0300 lvl=info msg="join connections" obj=join id=e69b86904ffb l=127.0.0.1:3000 r=102.69.233.46:43440
-t=2025-09-22T20:45:18+0300 lvl=info msg="join connections" obj=join id=53590faab5fa l=127.0.0.1:3000 r=102.69.233.46:43440
-t=2025-09-22T20:45:21+0300 lvl=info msg="join connections" obj=join id=2d9deb6c154f l=127.0.0.1:3000 r=102.69.233.46:43440
-t=2025-09-22T20:45:21+0300 lvl=info msg="join connections" obj=join id=a2c9e1b92200 l=127.0.0.1:3000 r=102.69.233.46:43440
-t=2025-09-22T20:45:26+0300 lvl=info msg="join connections" obj=join id=1f596fe280ca l=127.0.0.1:3000 r=102.69.233.46:43440
-t=2025-09-22T20:45:53+0300 lvl=info msg="join connections" obj=join id=f6512874e82b l=127.0.0.1:3000 r=102.69.233.46:43440
-t=2025-09-22T20:47:36+0300 lvl=info msg="join connections" obj=join id=5cb7982dd5c0 l=127.0.0.1:3000 r=102.69.233.46:43440
-t=2025-09-22T20:47:36+0300 lvl=info msg="join connections" obj=join id=f5d6debb2491 l=127.0.0.1:3000 r=102.69.233.46:43440
-t=2025-09-22T20:47:36+0300 lvl=info msg="join connections" obj=join id=1dc1be3f41ac l=127.0.0.1:3000 r=102.69.233.46:43440
-t=2025-09-22T20:47:40+0300 lvl=info msg="join connections" obj=join id=bff6964dd85a l=127.0.0.1:3000 r=66.249.93.10:61577
-t=2025-09-22T20:47:41+0300 lvl=info msg="join connections" obj=join id=1b1bd249f852 l=127.0.0.1:3000 r=74.125.210.71:48388
-t=2025-09-22T20:47:41+0300 lvl=info msg="join connections" obj=join id=e8f1864accd7 l=127.0.0.1:3000 r=74.125.210.69:40348
-t=2025-09-22T20:47:42+0300 lvl=info msg="join connections" obj=join id=3d60c586ce7e l=127.0.0.1:3000 r=74.125.210.66:43013
-t=2025-09-22T20:47:43+0300 lvl=info msg="join connections" obj=join id=586ed80cd08c l=127.0.0.1:3000 r=74.125.210.71:51140
-t=2025-09-22T21:43:33+0300 lvl=info msg="join connections" obj=join id=a29b6e0183a1 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:44:07+0300 lvl=info msg="join connections" obj=join id=d1ae3d8680e3 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:44:07+0300 lvl=info msg="join connections" obj=join id=5b19bde4ae12 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:44:07+0300 lvl=info msg="join connections" obj=join id=2894287f321e l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:44:20+0300 lvl=info msg="join connections" obj=join id=e53664fb0204 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:45:17+0300 lvl=info msg="join connections" obj=join id=14633470b6b9 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:45:17+0300 lvl=info msg="join connections" obj=join id=497e1dd053c1 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:45:17+0300 lvl=info msg="join connections" obj=join id=2b05a775af3c l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:45:27+0300 lvl=info msg="join connections" obj=join id=18746d647fea l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:45:30+0300 lvl=info msg="join connections" obj=join id=1a69ae43ae24 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:45:31+0300 lvl=info msg="join connections" obj=join id=bede4d5941cf l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:45:33+0300 lvl=info msg="join connections" obj=join id=08fa01ce4059 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:45:43+0300 lvl=info msg="join connections" obj=join id=ed70dc71f352 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:45:43+0300 lvl=info msg="join connections" obj=join id=abc6738211b9 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:46:18+0300 lvl=info msg="join connections" obj=join id=a18d250793cc l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:46:25+0300 lvl=info msg="join connections" obj=join id=795765e4bfed l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:46:25+0300 lvl=info msg="join connections" obj=join id=e0eb994e0082 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:46:28+0300 lvl=info msg="join connections" obj=join id=7189f0f3f661 l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:46:30+0300 lvl=info msg="join connections" obj=join id=ccf6e88c3b5f l=127.0.0.1:3000 r=196.96.86.249:3846
-t=2025-09-22T21:46:32+0300 lvl=info msg="join connections" obj=join id=38cfc1953309 l=127.0.0.1:3000 r=196.96.86.249:3846
+t=2025-09-23T11:57:52+0300 lvl=info msg="no configuration paths supplied"
+t=2025-09-23T11:57:52+0300 lvl=info msg="using configuration at default config path" path=/home/boaz/.config/ngrok/ngrok.yml
+t=2025-09-23T11:57:52+0300 lvl=info msg="open config file" path=/home/boaz/.config/ngrok/ngrok.yml err=nil
+t=2025-09-23T11:57:52+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2025-09-23T11:57:53+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2025-09-23T11:57:53+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2025-09-23T11:57:53+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:3000 url=https://89124eaa7261.ngrok-free.app
+t=2025-09-23T11:57:53+0300 lvl=info msg="update available" obj=updater
+t=2025-09-23T11:57:57+0300 lvl=info msg=start pg=/api/tunnels id=47f84b8855682ae5
+t=2025-09-23T11:57:57+0300 lvl=info msg=end pg=/api/tunnels id=47f84b8855682ae5 status=200 dur=555.707µs
+t=2025-09-23T12:08:48+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=5b22337336f4 clientid=4f7c3cd4f93e3aba141c5a8305e392a8
+t=2025-09-23T12:08:48+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=b291bf4d1840 err="session closed"
+t=2025-09-23T12:08:48+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com on 127.0.0.53:53: server misbehaving"
+t=2025-09-23T12:08:48+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com on 127.0.0.53:53: server misbehaving"
+t=2025-09-23T12:08:49+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com on 127.0.0.53:53: server misbehaving"
+t=2025-09-23T12:08:51+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com on 127.0.0.53:53: server misbehaving"
+t=2025-09-23T12:08:57+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2025-09-23T12:08:57+0300 lvl=info msg="tunnel session started" obj=tunnels.session

@@ -21,24 +21,41 @@ const PWAInstallPrompt = () => {
     }
 
     // Check if app is already installed
-    if (window.matchMedia('(display-mode: standalone)').matches) {
+    if (window.matchMedia('(display-mode: standalone)').matches || 
+        window.navigator.standalone === true) {
       setIsInstalled(true);
       setShowInstallPrompt(false);
       return;
     }
 
-    // Force engagement tracking for PWA criteria
+    // Enhanced engagement tracking for PWA criteria
     const startTime = Date.now();
+    let interactionCount = 0;
+    const minInteractions = 3; // Minimum interactions for PWA criteria
+    const minEngagementTime = 30000; // 30 seconds minimum engagement
+
     const trackEngagement = () => {
+      interactionCount++;
       const engagementTime = Date.now() - startTime;
       localStorage.setItem('pwa-engagement-time', engagementTime.toString());
+      localStorage.setItem('pwa-interaction-count', interactionCount.toString());
+      
+      // Show install prompt after sufficient engagement
+      if (interactionCount >= minInteractions && engagementTime >= minEngagementTime) {
+        setShowInstallPrompt(true);
+      }
     };
 
     // Track user interactions
-    const events = ['click', 'scroll', 'keydown', 'touchstart'];
+    const events = ['click', 'scroll', 'keydown', 'touchstart', 'mousemove'];
     events.forEach(event => {
-      document.addEventListener(event, trackEngagement, { once: false });
+      document.addEventListener(event, trackEngagement, { once: false, passive: true });
     });
+
+    // Show prompt after 5 seconds regardless
+    const timer = setTimeout(() => {
+      setShowInstallPrompt(true);
+    }, 5000);
 
     // Listen for the beforeinstallprompt event
     const handleBeforeInstallPrompt = (e) => {
@@ -65,6 +82,7 @@ const PWAInstallPrompt = () => {
     }
 
     return () => {
+      clearTimeout(timer);
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
       window.removeEventListener('appinstalled', handleAppInstalled);
       // Cleanup engagement tracking
@@ -84,53 +102,123 @@ const PWAInstallPrompt = () => {
       
       if (outcome === 'accepted') {
         console.log('User accepted the install prompt');
+        setShowInstallPrompt(false);
       } else {
         console.log('User dismissed the install prompt');
       }
       
       // Clear the deferredPrompt
       setDeferredPrompt(null);
-      setShowInstallPrompt(false);
     } else {
-      // Fallback: Try to trigger manual installation
-      console.log('No deferredPrompt available, trying manual installation...');
+      // Enhanced fallback for mobile installation
+      console.log('No deferredPrompt available, showing installation guide...');
       
-      // Check if the app is already installable
-      if (window.matchMedia('(display-mode: standalone)').matches) {
-        alert('This app is already installed!');
+      // Check if the app is already installed
+      if (window.matchMedia('(display-mode: standalone)').matches || 
+          window.navigator.standalone === true) {
+        alert('✅ This app is already installed!');
         return;
       }
       
-      // Try to trigger the browser's native install prompt
-      // This might work in some browsers even without beforeinstallprompt
-      try {
-        // Create a temporary link to trigger install
-        const link = document.createElement('a');
-        link.href = window.location.href;
-        link.rel = 'manifest';
-        document.head.appendChild(link);
-        document.head.removeChild(link);
-        
-        // Show detailed installation instructions
-        const instructions = `
-📱 INSTALL TOTALENERGIES PORTAL
+      // Detect device and browser
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isAndroid = /Android/i.test(navigator.userAgent);
+      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const isChrome = /Chrome/i.test(navigator.userAgent);
+      
+      let instructions = '';
+      
+      if (isMobile) {
+        if (isAndroid && isChrome) {
+          instructions = `
+📱 INSTALL ON ANDROID:
 
-IMPORTANT: Use "Add to Home screen" for proper PWA installation!
+✅ This is a TRUE PWA - it will work like a real app!
 
-Mobile (Chrome):
-• Tap 3-dot menu (⋮) → "Add to Home screen"
-• This creates a REAL app, not a shortcut
+Method 1: Look for install icon
+• Look for the install icon (⭣ or ⊕) in your address bar
+• Tap it to install the app
 
-Desktop (Chrome/Edge):
-• Click 3-dot menu (⋮) → "Install TotalEnergies Portal"
-• Or look for ⊕ install icon in address bar
+Method 2: Browser menu
+• Tap the 3-dot menu (⋮) in Chrome
+• Look for "Install app" or "Add to Home screen"
+• Tap it to install
 
-After installation, you'll get a standalone app with no browser UI!
+Method 3: Manual add
+• Tap the 3-dot menu (⋮) → "Add to Home screen"
+• Tap "Add" to confirm
+
+Once installed, you'll get a REAL app icon on your home screen that opens without the browser!
+          `;
+        } else if (isIOS) {
+          instructions = `
+📱 INSTALL ON iOS:
+
+✅ This is a TRUE PWA - it will work like a real app!
+
+Method 1: Safari Share menu
+• Tap the Share button (□↗) at the bottom
+• Scroll down and tap "Add to Home Screen"
+• Tap "Add" in the top right
+
+Method 2: Chrome (if using)
+• Tap the 3-dot menu (⋮)
+• Look for "Add to Home screen"
+• Tap it to install
+
+Once installed, you'll get a REAL app icon on your home screen that opens without the browser!
+          `;
+        } else {
+          instructions = `
+📱 INSTALL ON MOBILE:
+
+✅ This is a TRUE PWA - it will work like a real app!
+
+• Look for an install icon in your browser's address bar
+• Or use your browser's menu to find "Add to Home screen" or "Install app"
+• Once installed, you'll get a REAL app icon on your home screen!
+
+This creates a true standalone app experience!
+          `;
+        }
+      } else {
+        instructions = `
+💻 INSTALL ON DESKTOP:
+
+✅ This is a TRUE PWA - it will work like a real app!
+
+Chrome/Edge:
+• Look for the install icon (⭣ or ⊕) in the address bar
+• Or click the 3-dot menu (⋮) → "Install TotalEnergies Portal"
+• This creates a standalone desktop app with no browser UI!
+
+Firefox:
+• Click the 3-dot menu (⋮) → "Install"
+• Or look for install icon in address bar
+
+Once installed, it appears in your Start Menu/Applications like any other app!
         `;
-        alert(instructions);
-      } catch (error) {
-        console.log('Install fallback failed:', error);
-        alert('To install this app:\n\n1. Look for the install icon in your browser\'s address bar (⭣ or ⊕)\n2. Or use your browser\'s menu to "Install app"\n3. Or add to home screen on mobile\n\nThis app is PWA-ready and can be installed!');
+      }
+      
+      // Show instructions in a more user-friendly way
+      // eslint-disable-next-line no-restricted-globals
+      const userConfirmed = confirm(instructions + '\n\nClick OK to continue, or Cancel to dismiss this message.');
+      
+      if (userConfirmed) {
+        // Try to trigger the browser's native install behavior
+        try {
+          // Force a page refresh to trigger PWA detection
+          if (isMobile) {
+            // On mobile, we can't programmatically trigger install
+            // But we can guide the user
+            console.log('Mobile PWA installation requires user action');
+          } else {
+            // On desktop, try to trigger install
+            window.location.reload();
+          }
+        } catch (error) {
+          console.log('Install fallback failed:', error);
+        }
       }
     }
   };

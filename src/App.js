@@ -8,6 +8,7 @@ import Apps from './pages/Apps';
 import Features from './pages/Features';
 import Analytics from './pages/Analytics';
 import Settings from './pages/Settings';
+import DownloadApp from './pages/DownloadApp';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
 
 /**
@@ -83,6 +84,7 @@ function App() {
               <Route path="features" element={<Features />} />
               <Route path="analytics" element={<Analytics />} />
               <Route path="settings" element={<Settings />} />
+              <Route path="download" element={<DownloadApp />} />
             </Route>
           </Routes>
         </div>
