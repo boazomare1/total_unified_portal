@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Toast from '../components/Toast';
 
 /**
@@ -20,8 +19,7 @@ const Login = () => {
   const [pendingUser, setPendingUser] = useState(null);
   const [toast, setToast] = useState({ show: false, message: '', type: 'error' });
   
-  const { login, verifyOTP } = useAuth();
-  const navigate = useNavigate();
+  // const { login, verifyOTP } = useAuth(); // Not used in current implementation
 
 
   const handleChange = (e) => {
