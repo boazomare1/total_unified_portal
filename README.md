@@ -288,4 +288,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 **Built with ❤️ for TotalEnergies Client Portal**
 
-*Last updated: September 2024*
+*Last updated: January 2025*

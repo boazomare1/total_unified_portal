@@ -214,7 +214,7 @@ const Features = () => {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-300 text-center text-gray-600">
-          <p>&copy; 2024 Unified Portal. All rights reserved.</p>
+            <p>&copy; 2025 TotalEnergies Client Portal. All rights reserved.</p>
         </div>
       </div>
     </div>

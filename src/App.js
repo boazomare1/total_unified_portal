@@ -6,6 +6,8 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Apps from './pages/Apps';
 import Features from './pages/Features';
+import Analytics from './pages/Analytics';
+import Settings from './pages/Settings';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
 
 /**

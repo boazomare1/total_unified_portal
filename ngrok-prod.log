@@ -1,0 +1,23 @@
+t=2025-09-22T18:21:08+0300 lvl=info msg="no configuration paths supplied"
+t=2025-09-22T18:21:08+0300 lvl=info msg="using configuration at default config path" path=/home/boaz/.config/ngrok/ngrok.yml
+t=2025-09-22T18:21:08+0300 lvl=info msg="open config file" path=/home/boaz/.config/ngrok/ngrok.yml err=nil
+t=2025-09-22T18:21:08+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2025-09-22T18:21:08+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2025-09-22T18:21:08+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2025-09-22T18:21:09+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:3001 url=https://10c68896a2b5.ngrok-free.app
+t=2025-09-22T18:21:10+0300 lvl=info msg=start pg=/api/tunnels id=34323b6e434c11d3
+t=2025-09-22T18:21:10+0300 lvl=info msg=end pg=/api/tunnels id=34323b6e434c11d3 status=200 dur=336.423µs
+t=2025-09-22T18:21:13+0300 lvl=warn msg="failed to check for update" obj=updater err="Post \"https://update.equinox.io/check\": context deadline exceeded"
+t=2025-09-22T18:21:15+0300 lvl=info msg=start pg=/api/tunnels id=2e18344173cf4059
+t=2025-09-22T18:21:15+0300 lvl=info msg=end pg=/api/tunnels id=2e18344173cf4059 status=200 dur=258.474µs
+t=2025-09-22T18:21:22+0300 lvl=info msg="join connections" obj=join id=516e77c7695a l=127.0.0.1:3001 r=41.139.236.173:46849
+t=2025-09-22T18:21:50+0300 lvl=info msg="join connections" obj=join id=67d897743ce3 l=127.0.0.1:3001 r=41.139.236.173:46840
+t=2025-09-22T18:22:03+0300 lvl=info msg="join connections" obj=join id=afee0e7eec36 l=127.0.0.1:3001 r=41.139.236.173:46821
+t=2025-09-22T18:22:30+0300 lvl=info msg="join connections" obj=join id=935463f5ae2a l=127.0.0.1:3001 r=41.139.236.173:46795
+t=2025-09-22T18:22:39+0300 lvl=info msg="join connections" obj=join id=cade84412207 l=127.0.0.1:3001 r=41.139.236.173:12601
+t=2025-09-22T18:22:42+0300 lvl=info msg="join connections" obj=join id=212b6bfd6d03 l=127.0.0.1:3001 r=41.139.236.173:46790
+t=2025-09-22T18:23:08+0300 lvl=info msg="join connections" obj=join id=3efe46d72a06 l=127.0.0.1:3001 r=41.139.236.173:46745
+t=2025-09-22T18:23:26+0300 lvl=info msg="join connections" obj=join id=79aaf6730b80 l=127.0.0.1:3001 r=41.139.236.173:46745
+t=2025-09-22T18:23:34+0300 lvl=info msg="join connections" obj=join id=805ae2688d1f l=127.0.0.1:3001 r=41.139.236.173:12660
+t=2025-09-22T18:23:44+0300 lvl=info msg="join connections" obj=join id=d070aeb584a7 l=127.0.0.1:3001 r=41.139.236.173:46649
+t=2025-09-22T18:23:46+0300 lvl=info msg="join connections" obj=join id=9bac28b024cb l=127.0.0.1:3001 r=41.139.236.173:12724

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useAuth } from '../context/AuthContext';
 import AppCard from '../components/AppCard';
 
 /**
@@ -8,6 +9,7 @@ import AppCard from '../components/AppCard';
 const Apps = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const { isAdmin } = useAuth();
 
   const apps = [
     // Fuel & Lubricants
@@ -18,6 +20,7 @@ const Apps = () => {
       category: 'Fuel & Lubricants',
       status: 'active',
       color: 'primary',
+      url: '#', // Placeholder - would be actual eStar URL
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -124,6 +127,7 @@ const Apps = () => {
       category: 'Gas & Distribution',
       status: 'active',
       color: 'primary',
+      url: 'https://totalapp.techsavanna.co.ke/',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -287,8 +291,14 @@ const Apps = () => {
   });
 
   const handleLaunch = (appId) => {
-    console.log(`Launching app ${appId}`);
-    // In a real app, this would navigate to the specific application
+    const app = apps.find(a => a.id === appId);
+    if (app && app.url) {
+      // Open external URL in new tab
+      window.open(app.url, '_blank', 'noopener,noreferrer');
+    } else {
+      console.log(`Launching app ${appId}`);
+      // In a real app, this would navigate to the specific application
+    }
   };
 
   const handleSettings = (appId) => {
@@ -344,8 +354,9 @@ const Apps = () => {
         </div>
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      {/* Stats - Only show for admins */}
+      {isAdmin() && (
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
         <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
           <div className="flex items-center">
             <div className="flex-shrink-0">
@@ -398,6 +409,7 @@ const Apps = () => {
           </div>
         </div>
       </div>
+      )}
 
       {/* Apps Grid */}
       {filteredApps.length > 0 ? (
