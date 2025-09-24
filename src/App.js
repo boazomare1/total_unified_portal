@@ -61,7 +61,7 @@ function App() {
           <PWAInstallPrompt />
           
           <Routes>
-            {/* Public landing page */}
+            {/* Public landing page - accessible to everyone */}
             <Route 
               path="/" 
               element={<PublicLanding />} 
@@ -79,7 +79,7 @@ function App() {
 
             {/* All other routes with layout */}
             <Route 
-              path="/*" 
+              path="/dashboard/*" 
               element={
                 <ProtectedRoute>
                   <Layout />
