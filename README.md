@@ -6,20 +6,25 @@ A production-ready React Progressive Web App (PWA) for centralized business appl
 
 ### Core Functionality
 - **Progressive Web App (PWA)** - Installable on desktop and mobile devices
+- **Public Landing Page** - Showcases all 20+ TotalEnergies services to public users
 - **Responsive Design** - Works seamlessly across all device sizes
-- **Authentication System** - Secure login with context-based state management
-- **Centralized Dashboard** - Overview of all applications and system status
+- **Authentication System** - Secure login with OTP verification and context-based state management
+- **Centralized Dashboard** - Overview of all applications and system status with metrics
 - **Application Management** - Launch and manage business applications
 - **Real-time Analytics** - Performance metrics and usage statistics
+- **Client/Partner Showcase** - Display of key partners (M-Pesa, KRA, Microsoft, Oracle)
 
 ### Technical Features
 - **React 18** with modern hooks and context API
-- **React Router DOM** for client-side navigation
+- **React Router DOM** for client-side navigation with protected routes
+- **Shadcn/ui** - Modern, accessible UI component library
 - **TailwindCSS** for responsive styling and theming
+- **Lucide React** for consistent iconography
 - **Service Worker** for offline functionality
 - **PWA Manifest** for app installation
 - **ESLint** for code quality and accessibility
 - **Modular Architecture** with clean component structure
+- **Chart.js Integration** for data visualization
 
 ## 🎨 Design & Branding
 
@@ -32,11 +37,15 @@ A production-ready React Progressive Web App (PWA) for centralized business appl
 - **Accent Colors**: Full spectrum of TotalEnergies brand colors
 
 ### UI Components
+- **Shadcn/ui Components** - Modern, accessible button, card, and form components
 - **Custom Logo Integration** - TotalEnergies logo throughout the application
 - **Color-coded Application Cards** - Visual distinction for different app types
 - **Responsive Navigation** - Mobile-friendly sidebar and navbar
 - **Professional Dashboard** - Clean, modern interface with statistics widgets
 - **Interactive Elements** - Hover effects and smooth transitions
+- **Count Cards** - Dynamic statistics with TotalEnergies brand colors
+- **Lock Icons with Tooltips** - Intuitive access control for public users
+- **Client Logo Grid** - Professional partner showcase with hover effects
 
 ## 📁 Project Structure
 
@@ -48,15 +57,28 @@ src/
 │   ├── AppCard.js             # Application card component
 │   ├── Layout.js              # Main layout wrapper
 │   ├── Navbar.js              # Top navigation bar
-│   └── Sidebar.js             # Side navigation menu
+│   ├── Sidebar.js             # Side navigation menu
+│   ├── OTPInput.js            # Modern OTP input with individual boxes
+│   ├── Toast.js               # Toast notification component
+│   ├── Snackbar.js            # Snackbar notification component
+│   └── ui/                    # Shadcn/ui components
+│       ├── button.jsx         # Button component
+│       └── card.jsx           # Card component
 ├── context/
 │   └── AuthContext.js         # Authentication context provider
+├── lib/
+│   └── utils.js               # Utility functions for Shadcn/ui
 ├── pages/
 │   ├── Apps.js                # Applications listing page
-│   ├── Dashboard.js           # Main dashboard page
+│   ├── Dashboard.js           # Main dashboard page with metrics
 │   ├── Features.js            # Features showcase page
-│   └── Login.js               # Authentication page
-├── App.js                     # Main application component
+│   ├── Login.js               # Authentication page with OTP
+│   ├── PublicLanding.js       # Public landing page with all services
+│   ├── Profile.js             # User profile page
+│   ├── Settings.js            # Application settings
+│   ├── Analytics.js           # Analytics and reporting
+│   └── DownloadApp.js         # PWA download instructions
+├── App.js                     # Main application component with routing
 ├── index.js                   # Application entry point
 └── serviceWorkerRegistration.js # PWA service worker setup
 ```
@@ -114,9 +136,11 @@ Custom theme configuration in `tailwind.config.js`:
 
 ### Authentication
 - **Context-based**: Uses React Context API for state management
+- **OTP Verification**: Modern OTP input with individual digit boxes
 - **Local Storage**: Persistent login sessions
-- **Placeholder Implementation**: Ready for backend integration
 - **Protected Routes**: Automatic redirection based on auth status
+- **Public/Private Routes**: Separate routing for authenticated and public users
+- **Smart Logout**: Redirects to public landing page after logout
 
 ## 📱 PWA Installation
 
@@ -140,16 +164,31 @@ Custom theme configuration in `tailwind.config.js`:
 
 ## 🎯 Usage
 
+### Public Access (Unauthenticated Users)
+- **Landing Page**: View all 20+ TotalEnergies services at `/`
+- **Service Discovery**: Browse categories (Fuel & Lubricants, Energy Solutions, etc.)
+- **Partner Showcase**: View key partners and trust statistics
+- **Access Control**: Lock icons indicate login required for app access
+
 ### Authentication
 - **Demo Credentials**: Use any email and password to login
+- **OTP Verification**: Enter 6-digit OTP code in individual boxes
 - **Example**: `admin@example.com` / `password123`
 - **Session Management**: Automatic login persistence
 
+### Authenticated User Experience
+- **Dashboard**: Overview with metrics, charts, and analytics
+- **Apps**: Full access to launch and manage applications
+- **Features**: Detailed portal capabilities
+- **Settings**: Application and user preferences
+- **Profile**: User account management
+- **Analytics**: Performance metrics and reporting
+
 ### Navigation
-- **Dashboard**: Overview of applications and system status
-- **Apps**: Browse and launch available applications
-- **Features**: Learn about portal capabilities
-- **Sidebar**: Quick navigation between sections
+- **Public Landing**: Accessible to everyone at `/`
+- **Protected Routes**: Dashboard, Apps, Settings, Profile, Analytics
+- **Smart Routing**: Automatic redirection based on authentication status
+- **Sidebar**: Quick navigation between sections for authenticated users
 
 ### Application Management
 - **Launch Apps**: Click "Launch" on any application card
@@ -287,5 +326,23 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 **Built with ❤️ for TotalEnergies Client Portal**
+
+## 🆕 Recent Updates
+
+### Version 2.0 Features (January 2025)
+- ✅ **Shadcn/ui Integration** - Modern, accessible UI components
+- ✅ **Public Landing Page** - Comprehensive service showcase for public users
+- ✅ **OTP Authentication** - Modern 6-digit OTP input with individual boxes
+- ✅ **Enhanced Routing** - Proper public/private route separation
+- ✅ **Client Showcase** - Partner logos (M-Pesa, KRA, Microsoft, Oracle)
+- ✅ **TotalEnergies Branding** - Complete brand color integration
+- ✅ **Improved UX** - Lock icons with tooltips, count cards, animations
+- ✅ **Smart Logout** - Redirects to public landing instead of login
+
+### Technical Improvements
+- ✅ **Component Architecture** - Modular Shadcn/ui components
+- ✅ **Performance** - Optimized routing and state management
+- ✅ **Accessibility** - WCAG compliant components
+- ✅ **Mobile Optimization** - Enhanced responsive design
 
 *Last updated: January 2025*
