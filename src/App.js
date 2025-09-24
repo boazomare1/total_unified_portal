@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Layout from './components/Layout';
+import PublicLanding from './pages/PublicLanding';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Apps from './pages/Apps';
@@ -60,6 +61,12 @@ function App() {
           <PWAInstallPrompt />
           
           <Routes>
+            {/* Public landing page */}
+            <Route 
+              path="/" 
+              element={<PublicLanding />} 
+            />
+
             {/* Login route - no layout */}
             <Route 
               path="/login" 
