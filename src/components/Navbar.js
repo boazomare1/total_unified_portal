@@ -15,7 +15,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     const result = await logout();
     if (result.success) {
-      navigate('/login');
+      navigate('/');
     }
   };
 

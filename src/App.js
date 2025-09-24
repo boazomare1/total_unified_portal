@@ -61,11 +61,16 @@ function App() {
           <PWAInstallPrompt />
           
           <Routes>
-            {/* Public landing page - accessible to everyone */}
+            {/* Public landing page - only for non-authenticated users */}
             <Route 
               path="/" 
-              element={<PublicLanding />} 
+              element={
+                <PublicRoute>
+                  <PublicLanding />
+                </PublicRoute>
+              } 
             />
+
 
             {/* Login route - no layout */}
             <Route 
@@ -77,23 +82,83 @@ function App() {
               } 
             />
 
-            {/* All other routes with layout */}
+            {/* Dashboard route */}
             <Route 
-              path="/dashboard/*" 
+              path="/dashboard" 
               element={
                 <ProtectedRoute>
                   <Layout />
                 </ProtectedRoute>
               }
             >
-              <Route index element={<Navigate to="/dashboard" replace />} />
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="apps" element={<Apps />} />
-              <Route path="features" element={<Features />} />
-              <Route path="analytics" element={<Analytics />} />
-              <Route path="settings" element={<Settings />} />
-              <Route path="profile" element={<Profile />} />
-              <Route path="download" element={<DownloadApp />} />
+              <Route index element={<Dashboard />} />
+            </Route>
+
+            {/* Protected routes with layout */}
+            <Route 
+              path="/apps" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Apps />} />
+            </Route>
+
+            <Route 
+              path="/features" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Features />} />
+            </Route>
+
+            <Route 
+              path="/analytics" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Analytics />} />
+            </Route>
+
+            <Route 
+              path="/settings" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Settings />} />
+            </Route>
+
+            <Route 
+              path="/profile" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Profile />} />
+            </Route>
+
+            <Route 
+              path="/download" 
+              element={
+                <ProtectedRoute>
+                  <Layout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<DownloadApp />} />
             </Route>
           </Routes>
         </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 /**
@@ -7,6 +8,7 @@ import { useAuth } from '../context/AuthContext';
  */
 const Profile = () => {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
   const [profileData, setProfileData] = useState({
     name: user?.name || '',
@@ -50,6 +52,7 @@ const Profile = () => {
 
   const handleLogout = async () => {
     await logout();
+    navigate('/');
   };
 
   return (
