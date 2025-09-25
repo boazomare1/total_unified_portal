@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
     const baseUser = {
       id: role === 'admin' ? '1' : '2',
       email: email,
-      name: role === 'admin' ? 'John Doe (Admin)' : 'Jane Smith (User)',
+      name: role === 'admin' ? 'John Doe' : 'Jane Smith',
       role: role,
       avatar: null,
       lastLogin: new Date().toISOString(),
