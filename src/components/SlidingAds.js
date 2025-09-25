@@ -7,7 +7,8 @@ import React, { useState, useEffect } from 'react';
 const SlidingAds = ({ 
   ads = [], 
   autoSlideInterval = 5000, 
-  className = ""
+  className = "",
+  showCTA = true
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -124,7 +125,7 @@ const SlidingAds = ({
                   <p className={`text-sm md:text-base lg:text-lg mb-6 ${ad.textColor || 'text-white'} opacity-95 leading-relaxed`}>
                     {ad.description}
                   </p>
-                  {ad.ctaText && (
+                  {showCTA && ad.ctaText && (
                     <button
                       onClick={() => ad.ctaUrl && window.open(ad.ctaUrl, '_blank')}
                       className="bg-white bg-opacity-25 hover:bg-opacity-35 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg hover:shadow-xl"

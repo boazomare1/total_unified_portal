@@ -456,10 +456,10 @@ const Dashboard = () => {
       {/* Welcome header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
-          Welcome back, {user?.name || 'User'}!
+          Welcome back - Admin {user?.name || 'User'}
         </h1>
         <p className="mt-2 text-gray-600">
-          Here's what's happening with your applications today.
+          Here's what's happening with your applications today
         </p>
       </div>
 
@@ -469,6 +469,7 @@ const Dashboard = () => {
           ads={dashboardAds} 
           autoSlideInterval={7000}
           className="mb-6"
+          showCTA={false}
         />
       </div>
 

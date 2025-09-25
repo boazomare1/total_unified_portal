@@ -400,6 +400,7 @@ const Apps = () => {
           ads={promotionalAds} 
           autoSlideInterval={6000}
           className="mb-6"
+          showCTA={!isAdmin()}
         />
       </div>
 
