@@ -9,7 +9,7 @@ import { useAuth } from '../context/AuthContext';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
-  const { user, logout, isAuthenticated } = useAuth();
+  const { user, logout, isAuthenticated, isAdmin } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -105,6 +105,9 @@ const Navbar = () => {
                     >
                       Settings
                     </Link>
+                    <div className="px-4 py-2 text-xs text-gray-500 border-t border-gray-100">
+                      {isAdmin() ? 'Admin account' : 'User account'}
+                    </div>
                     <button
                       onClick={handleLogout}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
