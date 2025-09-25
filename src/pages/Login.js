@@ -40,14 +40,14 @@ const Login = () => {
 
     // Simple hardcoded check for demo
     if (formData.email === 'admin@totalenergies.com' && formData.password === 'admin123') {
-      setPendingUser({ id: '1', email: 'admin@totalenergies.com', name: 'John Doe (Admin)', role: 'admin' });
+      setPendingUser({ id: '1', email: 'admin@totalenergies.com', name: 'John Doe ', role: 'admin' });
       setShowOTP(true);
       setIsLoading(false);
       return;
     }
     
     if (formData.email === 'user@totalenergies.com' && formData.password === 'user123') {
-      setPendingUser({ id: '2', email: 'user@totalenergies.com', name: 'Jane Smith (User)', role: 'user' });
+      setPendingUser({ id: '2', email: 'user@totalenergies.com', name: 'Jane Smith', role: 'user' });
       setShowOTP(true);
       setIsLoading(false);
       return;

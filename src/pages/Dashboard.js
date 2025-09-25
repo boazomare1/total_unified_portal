@@ -456,7 +456,7 @@ const Dashboard = () => {
       {/* Welcome header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
-          Welcome back - Admin {user?.name || 'User'}
+          Welcome back , {user?.name || 'User'}
         </h1>
         <p className="mt-2 text-gray-600">
           Here's what's happening with your applications today
