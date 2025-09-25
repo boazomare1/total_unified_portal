@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
+import SlidingAds from '../components/SlidingAds';
 
 /**
  * User Dashboard - Simplified view for regular users
@@ -61,6 +62,58 @@ const UserDashboard = () => {
         </svg>
       ),
     },
+  ];
+
+  // Promotional ads for regular users
+  const userAds = [
+    {
+      id: 1,
+      title: "🔥 LPG Special Offer",
+      description: "Get 15% OFF on all LPG cylinder orders this month! Plus free delivery within Nairobi. Limited time offer!",
+      image: "/family_lpg_kitchen.jpg",
+      ctaText: "Order Now",
+      ctaUrl: "https://totalapp.techsavanna.co.ke/",
+      bgColor: "bg-gradient-to-r from-red-500 to-red-600",
+      textColor: "text-white",
+      offer: "15% OFF",
+      badge: "HOT DEAL"
+    },
+    {
+      id: 2,
+      title: "⛽ Fuel Discount",
+      description: "Save up to 8% on fuel orders above 1000 liters. Perfect for your business needs!",
+      image: "/fuel_station_professional.jpg",
+      ctaText: "Get Quote",
+      ctaUrl: "/apps",
+      bgColor: "bg-gradient-to-r from-blue-500 to-blue-600",
+      textColor: "text-white",
+      offer: "8% OFF",
+      badge: "BULK SAVINGS"
+    },
+    {
+      id: 3,
+      title: "💳 Booster Card",
+      description: "Earn 3% cashback on every fuel purchase with our Booster Card. Apply now!",
+      image: "/credit_card_payment.jpg",
+      ctaText: "Apply Now",
+      ctaUrl: "/apps",
+      bgColor: "bg-gradient-to-r from-purple-500 to-purple-600",
+      textColor: "text-white",
+      offer: "3% CASHBACK",
+      badge: "EXCLUSIVE"
+    },
+    {
+      id: 4,
+      title: "🚛 Free Delivery",
+      description: "Order any amount this weekend and get FREE delivery anywhere in Kenya!",
+      image: "/delivery_truck_logistics.jpg",
+      ctaText: "Order Now",
+      ctaUrl: "https://totalapp.techsavanna.co.ke/",
+      bgColor: "bg-gradient-to-r from-orange-500 to-orange-600",
+      textColor: "text-white",
+      offer: "FREE DELIVERY",
+      badge: "WEEKEND SPECIAL"
+    }
   ];
 
   const myRecentActivity = [
@@ -164,6 +217,15 @@ const UserDashboard = () => {
         <p className="mt-2 text-gray-600">
           Here's your personal dashboard and quick access to your applications.
         </p>
+      </div>
+
+      {/* Promotional Ads */}
+      <div className="mb-8">
+        <SlidingAds 
+          ads={userAds} 
+          autoSlideInterval={6000}
+          className="mb-6"
+        />
       </div>
 
       {/* User Stats */}

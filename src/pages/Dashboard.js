@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import UserDashboard from './UserDashboard';
+import SlidingAds from '../components/SlidingAds';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -310,6 +311,82 @@ const Dashboard = () => {
     cutout: '60%',
   };
 
+  // Promotional ads for the Dashboard page
+  const dashboardAds = [
+    {
+      id: 1,
+      title: "🎉 December Fuel Promotion",
+      description: "Save up to 12% on diesel and petrol orders this December! Plus get priority delivery and free safety equipment with orders above KSh 50,000.",
+      image: "/fuel_station_professional.jpg",
+      ctaText: "Shop Now",
+      ctaUrl: "https://totalapp.techsavanna.co.ke/",
+      bgColor: "bg-gradient-to-r from-red-600 to-red-700",
+      textColor: "text-white",
+      offer: "12% OFF",
+      badge: "DECEMBER SPECIAL"
+    },
+    {
+      id: 2,
+      title: "🔥 LPG Winter Campaign",
+      description: "Stock up for winter! Buy 3 LPG cylinders and get 1 FREE. Plus free installation and safety check. Valid until end of month.",
+      image: "/family_lpg_kitchen.jpg",
+      ctaText: "Buy 3 Get 1",
+      ctaUrl: "https://totalapp.techsavanna.co.ke/",
+      bgColor: "bg-gradient-to-r from-blue-600 to-blue-700",
+      textColor: "text-white",
+      offer: "BUY 3 GET 1",
+      badge: "WINTER DEAL"
+    },
+    {
+      id: 3,
+      title: "💼 Business Fleet Discount",
+      description: "Fleet operators save 15% on bulk fuel orders + free GPS tracking for 3 months. Perfect for transport companies and delivery services.",
+      image: "/fleet_manager_warehouse.jpg",
+      ctaText: "Get Fleet Quote",
+      ctaUrl: "/apps", // Navigate to apps to show fleet management apps
+      bgColor: "bg-gradient-to-r from-green-600 to-green-700",
+      textColor: "text-white",
+      offer: "15% OFF",
+      badge: "FLEET SPECIAL"
+    },
+    {
+      id: 4,
+      title: "🎯 Referral Rewards Program",
+      description: "Refer a friend and both get KSh 5,000 credit bonus! Plus earn 2% commission on their first 3 orders. Start earning today!",
+      image: "/office_team_meeting.jpg",
+      ctaText: "Refer Now",
+      ctaUrl: "/profile", // Navigate to profile for referral program
+      bgColor: "bg-gradient-to-r from-purple-600 to-purple-700",
+      textColor: "text-white",
+      offer: "KSh 5,000",
+      badge: "REFERRAL BONUS"
+    },
+    {
+      id: 5,
+      title: "⚡ Express Delivery Service",
+      description: "Need fuel urgently? Our express delivery gets your order to you within 2 hours in Nairobi CBD. Premium service for urgent needs.",
+      image: "/delivery_truck_logistics.jpg",
+      ctaText: "Order Express",
+      ctaUrl: "https://totalapp.techsavanna.co.ke/",
+      bgColor: "bg-gradient-to-r from-orange-600 to-orange-700",
+      textColor: "text-white",
+      offer: "2 HOURS",
+      badge: "EXPRESS"
+    },
+    {
+      id: 6,
+      title: "🏆 VIP Customer Program",
+      description: "Join our VIP program for exclusive benefits: 5% extra discount, priority support, monthly fuel reports, and invitation-only events.",
+      image: "/vip_luxury_service.jpg",
+      ctaText: "Become VIP",
+      ctaUrl: "/profile", // Navigate to profile for VIP program
+      bgColor: "bg-gradient-to-r from-indigo-600 to-indigo-700",
+      textColor: "text-white",
+      offer: "5% EXTRA",
+      badge: "VIP EXCLUSIVE"
+    }
+  ];
+
   const quickActions = [
     {
       name: 'LPG Distribution',
@@ -384,6 +461,15 @@ const Dashboard = () => {
         <p className="mt-2 text-gray-600">
           Here's what's happening with your applications today.
         </p>
+      </div>
+
+      {/* Promotional Ads */}
+      <div className="mb-8">
+        <SlidingAds 
+          ads={dashboardAds} 
+          autoSlideInterval={7000}
+          className="mb-6"
+        />
       </div>
 
       {/* Stats grid */}

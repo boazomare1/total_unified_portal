@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import AppCard from '../components/AppCard';
+import SlidingAds from '../components/SlidingAds';
 
 /**
  * Apps page component
@@ -284,6 +285,82 @@ const Apps = () => {
 
   const categories = ['all', 'Fuel & Lubricants', 'Logistics & Tracking', 'Gas & Distribution', 'Retail & Customer Engagement', 'Infrastructure / Backoffice'];
 
+  // Promotional ads for the Apps page
+  const promotionalAds = [
+    {
+      id: 1,
+      title: "🔥 LPG Cylinder Special Offer",
+      description: "Get 15% OFF on all LPG cylinder orders this month! Plus free delivery within Nairobi. Limited time offer - Order now!",
+      image: "/family_lpg_kitchen.jpg",
+      ctaText: "Order LPG",
+      ctaUrl: "https://totalapp.techsavanna.co.ke/",
+      bgColor: "bg-gradient-to-r from-red-500 to-red-600",
+      textColor: "text-white",
+      offer: "15% OFF",
+      badge: "HOT DEAL"
+    },
+    {
+      id: 2,
+      title: "⛽ Fuel Bulk Order Discount",
+      description: "Order 1000+ liters of fuel and save up to 8% on your total bill. Perfect for fleet operators and large businesses.",
+      image: "/fuel_station_professional.jpg",
+      ctaText: "Get Quote",
+      ctaUrl: "/apps", // Navigate to apps page to show fuel apps
+      bgColor: "bg-gradient-to-r from-blue-500 to-blue-600",
+      textColor: "text-white",
+      offer: "8% OFF",
+      badge: "BULK SAVINGS"
+    },
+    {
+      id: 3,
+      title: "🎯 New Customer Welcome Bonus",
+      description: "First-time customers get KSh 2,000 credit bonus + free delivery on orders above KSh 10,000. Sign up today!",
+      image: "/office_team_meeting.jpg",
+      ctaText: "Sign Up Now",
+      ctaUrl: "/profile", // Navigate to profile/signup
+      bgColor: "bg-gradient-to-r from-green-500 to-green-600",
+      textColor: "text-white",
+      offer: "KSh 2,000",
+      badge: "NEW CUSTOMER"
+    },
+    {
+      id: 4,
+      title: "💳 Booster Card Exclusive",
+      description: "Earn 3% cashback on every fuel purchase with our Booster Card. Plus get priority delivery and exclusive offers.",
+      image: "/credit_card_payment.jpg",
+      ctaText: "Apply Now",
+      ctaUrl: "/apps", // Navigate to apps to show Booster Card app
+      bgColor: "bg-gradient-to-r from-purple-500 to-purple-600",
+      textColor: "text-white",
+      offer: "3% CASHBACK",
+      badge: "EXCLUSIVE"
+    },
+    {
+      id: 5,
+      title: "🚛 Free Delivery Weekend",
+      description: "Order any amount of fuel or LPG this weekend and get FREE delivery anywhere in Kenya. No minimum order required!",
+      image: "/delivery_truck_logistics.jpg",
+      ctaText: "Order Now",
+      ctaUrl: "https://totalapp.techsavanna.co.ke/",
+      bgColor: "bg-gradient-to-r from-orange-500 to-orange-600",
+      textColor: "text-white",
+      offer: "FREE DELIVERY",
+      badge: "WEEKEND SPECIAL"
+    },
+    {
+      id: 6,
+      title: "🏆 Loyalty Rewards Program",
+      description: "Join our loyalty program and earn points on every purchase. Redeem points for fuel discounts, free deliveries, and exclusive perks.",
+      image: "/vip_luxury_service.jpg",
+      ctaText: "Join Program",
+      ctaUrl: "/profile", // Navigate to profile for loyalty program
+      bgColor: "bg-gradient-to-r from-indigo-500 to-indigo-600",
+      textColor: "text-white",
+      offer: "EARN POINTS",
+      badge: "LOYALTY"
+    }
+  ];
+
   const filteredApps = apps.filter(app => {
     const matchesSearch = app.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          app.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -315,6 +392,15 @@ const Apps = () => {
         <p className="mt-2 text-gray-600">
           Access and manage all your business applications from one central location.
         </p>
+      </div>
+
+      {/* Promotional Ads */}
+      <div className="mb-8">
+        <SlidingAds 
+          ads={promotionalAds} 
+          autoSlideInterval={6000}
+          className="mb-6"
+        />
       </div>
 
       {/* Search and Filter */}
